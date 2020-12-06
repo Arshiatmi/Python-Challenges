@@ -1,0 +1,32 @@
+import os
+import requests
+
+f = open("config.txt")
+data = [i.strip() for i in f.readlines()]
+f.close()
+
+username = ""
+password = ""
+link="https://cdn.dribbble.com/users/1648697/screenshots/3422175/youdidit_800x600.jpg"
+name="pic.jpg"
+can_login=0
+
+for i in data:
+    if not "exec" in i:
+        print(i,":::::::::::::",eval(i),"!!!!!!!!")
+    else:
+        print("Malicious !",i)
+
+if username == "pwnninja" and password == "s3cr3t":
+    print("=" * 50)
+    print("Seems You Did It :)")
+    print("Do Not Forget To Open Your VPN :)")
+    print("Downloading...")
+    f = open('pic.jpg','wb')
+    f.write(requests.get(link).content)
+    f.close()
+    print("Downloaded !")
+    print("=" * 50)
+    os.startfile(name)
+else:
+    print("Try Again :(")
