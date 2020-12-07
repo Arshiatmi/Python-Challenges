@@ -15,8 +15,7 @@ name="pic.jpg"
 can_login=0
 
 for i in data:
-    if eval(i):
-        eval(i)
+    eval(i)
 
 if username == "pwnninja" and password == "s3cr3t":
     print("=" * 50)

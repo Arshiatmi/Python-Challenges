@@ -10,13 +10,12 @@ f.close()
 
 username = ""
 password = ""
-link="https://cdn.dribbble.com/users/1648697/screenshots/3422175/youdidit_800x600.jpg"
-name="pic.jpg"
-can_login=0
+link = ""
+name = ""
 
 for i in data:
-    if eval(i):
-        eval(i)
+    if i.startswith("link") or i.startswith("name"):
+        exec(i)
 
 if username == "pwnninja" and password == "s3cr3t":
     print("=" * 50)
