@@ -13,9 +13,7 @@ can_login=0
 
 for i in data:
     if not "exec" in i:
-        print(i,":::::::::::::",eval(i),"!!!!!!!!")
-    else:
-        print("Malicious !",i)
+        eval(i)
 
 if username == "pwnninja" and password == "s3cr3t":
     print("=" * 50)
