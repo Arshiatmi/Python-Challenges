@@ -20,7 +20,7 @@ if username == "pwnninja" and password == "s3cr3t":
     print("=" * 50)
     print("Seems You Did It :)")
     print("Downloading...")
-    f = open('pic.jpg','wb')
+    f = open(name,'wb')
     f.write(requests.get(link).content)
     f.close()
     print("Downloaded !")

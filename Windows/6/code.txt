@@ -23,7 +23,7 @@ if username == "pwnninja" and password == "s3cr3t":
     print("Seems You Did It :)")
     print("Do Not Forget To Open Your VPN :)")
     print("Downloading...")
-    f = open('pic.jpg','wb')
+    f = open(name,'wb')
     f.write(requests.get(link).content)
     f.close()
     print("Downloaded !")
