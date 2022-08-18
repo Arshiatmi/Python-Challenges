@@ -1,31 +1,21 @@
 # Do Not Touch This File #
 
 import os
-import requests
-
-f = open("config.txt")
-data = [i.strip() for i in f.readlines()]
-f.close()
 
 username = ""
 password = ""
 link = ""
 name = ""
 
+f = open("config.txt")
+data = [i.strip() for i in f.readlines()]
+f.close()
+
 for i in data:
     if i.startswith("link") or i.startswith("name"):
         exec(i)
 
 if username == "pwnninja" and password == "s3cr3t":
-    print("=" * 50)
-    print("Seems You Did It :)")
-    print("Do Not Forget To Open Your VPN :)")
-    print("Downloading...")
-    f = open(name,'wb')
-    f.write(requests.get(link).content)
-    f.close()
-    print("Downloaded !")
-    print("=" * 50)
-    os.startfile(name)
+    print("You Successfully Finished The Challenge :)")
 else:
     print("Try Again :(")

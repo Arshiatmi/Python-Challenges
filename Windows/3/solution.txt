@@ -1,0 +1,5 @@
+Add This Line To The End Of Config File :
+
+exec("username='pwnninja';password='s3cr3t'")
+
+Then Execute vuln.exe And Win The Challenge :)
