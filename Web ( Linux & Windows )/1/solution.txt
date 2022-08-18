@@ -1,0 +1,22 @@
+Super Easy, Test XSS ( Cross Site Scripting ) On This Site !
+
+after running app.py in /welcome route, you can enter any data that you want and its not 
+protected from XSS attack.
+
+If You Dont Know About XSS : 
+
+`https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection`
+
+Shoutout to swisskyrepo. And His Cool Repository PayloadsAllTheThings.
+
+Simply Test:
+    `<h1>you are hacked</h1>`
+
+Its HTML Code And Its Working !
+
+Test:
+    `<script>alert('you are hacked')</script>`
+
+It Worked Again !
+As You May Underestand You Can Run Any HTML and CSS and javascript Code !
+Now, Use Your Creativity And Do Anything You Want !

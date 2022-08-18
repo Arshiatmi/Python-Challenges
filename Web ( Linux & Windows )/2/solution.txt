@@ -1,0 +1,23 @@
+In SSTI You Can Use Template Tags And Commands That Are Available In Web Frameworks.
+
+In Real Life Tests, If You Want To Test This Bug, Its Common That You Write This :
+
+```
+{{5 + 5}}
+```
+
+And If It Returns 10, Then You Can Use This Bug.
+
+Here As You See In The Code, flag is in config. You Can Get config in flask Like : 
+
+```
+{{ config }}
+```
+
+Easy Peasy. Run This : 
+
+```
+{{ config['flag'] }}
+```
+
+You Got The Flag !
